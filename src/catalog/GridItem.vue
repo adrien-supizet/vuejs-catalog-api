@@ -43,7 +43,4 @@ export default {
     overflow:hidden;
     position:relative;
   }
-  img {
-  }
-
 </style>

@@ -10,9 +10,6 @@ export default {};
 </script>
 
 <style scoped lang="css">
-header {
-  margin-left: 100px 10px 0 10px;
-}
 h1,
 h2 {
   display: inline;
