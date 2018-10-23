@@ -1,21 +1,31 @@
 # catalog-vuejs-bootstrap
 
-> Grid catalog with details for Star Wars API
+## Project setup
 
-## Build Setup
-
-```bash
-# install dependencies
+```
 npm install
+```
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Compiles and hot-reloads for development
 
-# serve with hot reload at localhost:8081
-npm run dev -- --port 8081
+```
+npm run serve
+```
 
-# build for production with minification
+### Compiles and minifies for production
+
+```
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Run your tests
+
+```
+npm run test
+```
+
+### Lints and fixes files
+
+```
+npm run lint
+```
