@@ -24,7 +24,6 @@ export default {
   methods: {
     onUpdateType(newType) {
       this.typeOfSearch = newType;
-      //console.log();
     }
   }
 };

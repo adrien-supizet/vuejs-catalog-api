@@ -23,10 +23,7 @@ export default {
   created: function() {
     this.typeOfSearch = this.type;
     this.fetchData();
-  },
-  beforeUpdate: function() {
-    console.log(this.items);
-  },
+  }
   watch: {
     type() {
       this.fetchData();
@@ -48,6 +45,4 @@ export default {
 </script>
 
 <style lang="css">
-  #myGrid {
-  }
 </style>
