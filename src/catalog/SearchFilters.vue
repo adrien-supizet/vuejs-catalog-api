@@ -20,8 +20,8 @@ export default {
     ]
   }),
   methods: {
-    emitTypeChange(val) {
-      this.$emit("updateType", val);
+    emitTypeChange(newType) {
+      this.$emit("updateType", newType);
     }
   }
 };

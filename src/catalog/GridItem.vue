@@ -1,9 +1,9 @@
 <template lang="html">
         <b-card class="card"
-                v-if:thumbnail
+                v-if:shouldDisplay
                 v-bind:img-src=thumbail
                 img-alt="Img"
-                img-top>{{item.name}}
+                img-top>{{title}}
         </b-card>
 </template>
 
@@ -17,11 +17,24 @@ export default {
     }
   },
   computed: {
+    title() {
+      if (this.item.name) {
+        return this.item.name;
+      } else if (this.item.title) {
+        return this.item.title;
+      } else return this.item.fullName;
+    },
     thumbail() {
-      if (this.item.thumbnail.path.includes("image_not_available")) {
-        return false;
-      }
-      return this.item.thumbnail.path + "." + this.item.thumbnail.extension;
+      return this.item.thumbnail
+        ? this.item.thumbnail.path.includes("not_available")
+          ? ""
+          : this.item.thumbnail.path + "." + this.item.thumbnail.extension
+        : "";
+    },
+    shouldDisplay() {
+      return this.item.thumbnail.path.includes("image_not_available")
+        ? false
+        : true;
     }
   }
 };
@@ -30,7 +43,7 @@ export default {
 <style scoped lang="css">
   .card{
     text-align: center;
-    font-size: 1vw;
+    font-size: 2vw;
 }
   .square {
     padding-bottom:100%;
