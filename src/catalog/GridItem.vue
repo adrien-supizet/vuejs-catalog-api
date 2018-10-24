@@ -1,33 +1,27 @@
 <template lang="html">
-  <container class="square">
         <b-card class="card"
-                v-if:thumbnail!=""
+                v-if:thumbnail
                 v-bind:img-src=thumbail
                 img-alt="Img"
-                img-top>{{hero.name}}
+                img-top>{{item.name}}
         </b-card>
-      </container>
 </template>
 
 <script>
 export default {
   data: () => ({}),
   props: {
-    hero: {
+    item: {
       type: Object,
       default: {}
-    },
-    name: {
-      type: String,
-      default: "Unknown"
     }
   },
   computed: {
     thumbail() {
-      if (this.hero.thumbnail.path.includes("image_not_available")) {
-        return "";
+      if (this.item.thumbnail.path.includes("image_not_available")) {
+        return false;
       }
-      return this.hero.thumbnail.path + "." + this.hero.thumbnail.extension;
+      return this.item.thumbnail.path + "." + this.item.thumbnail.extension;
     }
   }
 };

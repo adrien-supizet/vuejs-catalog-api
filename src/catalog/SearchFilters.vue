@@ -1,6 +1,7 @@
 <template lang="html">
     <b-form-group label="">
-      <b-form-radio-group id="radios1" v-model="selected" :options="options" name="radioOpenions">
+      <span v-bind:name="this.selected"></span>
+      <b-form-radio-group id="radios1" v-model="selected" :options="options" name="radioOpenions" v-on:input="emitTypeChange">
       </b-form-radio-group>
   </b-form-group>
 </template>
@@ -17,7 +18,12 @@ export default {
       { text: "Series", value: "series" },
       { text: "Stories", value: "stories" }
     ]
-  })
+  }),
+  methods: {
+    emitTypeChange(val) {
+      this.$emit("updateType", val);
+    }
+  }
 };
 </script>
 

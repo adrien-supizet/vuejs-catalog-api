@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <HeaderComponent/>
-    <SearchFilters  id="search"/>
-    <GridLayout :type=typeOfSearch.type />
+    <SearchFilters id="search" @updateType="onUpdateType"/>
+    <GridLayout :type=typeOfSearch />
   </div>
 </template>
 
@@ -19,8 +19,13 @@ export default {
     SearchFilters
   },
   data: () => ({
-    typeOfSearch: SearchFilters.data
-  })
+    typeOfSearch: "characters"
+  }),
+  methods: {
+    onUpdateType(newType) {
+      typeOfSearch: newType;
+    }
+  }
 };
 </script>
 
